@@ -20,3 +20,10 @@
     height: 200px;
     padding: 10px 80px 10px 10px;
 }
+
+#basemap-div {
+    position: absolute;
+    top: 55px;
+    right: 5px;
+    z-index: 1;
+}

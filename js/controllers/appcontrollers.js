@@ -9,8 +9,9 @@ define([
     'esri/config',
     'esri/domUtils',
     'esri/dijit/Measurement',
+    'esri/dijit/BasemapToggle',
     'esri/IdentityManager'
-], function (declare, lang, on, dom, Map, GeometryService, esriConfig, domUtils, Measurement, esriID) {
+], function (declare, lang, on, dom, Map, GeometryService, esriConfig, domUtils, Measurement, BasemapToggle, esriID) {
     'use strict';
     esriID.setProtocolErrorHandler(function () {
         console.log("Protocol mismatch error");
@@ -40,6 +41,11 @@ define([
             }, 'measurement-div');
             domUtils.hide(dom.byId('measurement-div'));
             this.measurement.startup();
+            this.basemaps = new BasemapToggle({
+                map: this.map,
+                basemap: 'hybrid',
+                }, 'basemap-div');
+            this.basemaps.startup();
         },
 
         toggleMeasurement: function (e) {
