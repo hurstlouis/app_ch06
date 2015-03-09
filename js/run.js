@@ -5,7 +5,6 @@
     var pathRX = new RegExp(/\/[^\/]+$/), locationPath = location.pathname.replace(pathRX, '');
     require({
         async: true,
-
         packages: [{
             name: 'controllers',
             location: locationPath + '/js/controllers'
@@ -15,6 +14,9 @@
         }, {
             name: 'utils',
             location: locationPath + '/js/utils'
+        }, {
+            name: 'widgets',
+            location: locationPath + '/js/widgets'
         }, {
             name: 'app',
             location: locationPath + '/js',
